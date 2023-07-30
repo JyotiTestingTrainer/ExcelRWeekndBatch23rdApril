@@ -1,0 +1,11 @@
+
+@Smoke
+Scenario: Successful Login with Valid Credentials                                # Feature/LoginFeature.feature:3
+  Given User Launch Chrome Browser                                               # stepDefinitions.StepDef.user_launch_chrome_browser()
+  When User Opens URL "https://admin-demo.nopcommerce.com/login"                 # stepDefinitions.StepDef.user_opens_url(java.lang.String)
+  And User enter Email id as "admin@yourstore.com" and Enter Password as "admin" # stepDefinitions.StepDef.user_enter_email_id_as_and_enter_password_as(java.lang.String,java.lang.String)
+  And User Click on Login button                                                 # stepDefinitions.StepDef.user_click_on_login_button()
+  Then Page Title should be "Dashboard / nopCommerce administration"             # stepDefinitions.StepDef.page_title_should_be(java.lang.String)
+  When User click on Logout Link                                                 # stepDefinitions.StepDef.user_click_on_logout_link()
+  Then After Logout Page Title should be "Your store. Login"                     # stepDefinitions.StepDef.after_logout_page_title_should_be(java.lang.String)
+  And Close Browser                                                              # stepDefinitions.StepDef.close_browser()
